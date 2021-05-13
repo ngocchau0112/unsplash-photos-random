@@ -39,10 +39,6 @@ const WrapperImage = styled.section`
 function App() {
   const [images, setImages] = useState([]);
 
-  useEffect(() => {
-    fetchImages();
-  }, []);
-
   const fetchImages = () => {
     const apiRoot = "https://api.unsplash.com";
     const apiKey = "UlzxMniZcRudnxBoC7eC7rPPyx4SJwcm2Ymp31--SFs";
@@ -50,6 +46,10 @@ function App() {
       .get(`${apiRoot}/photos/random?client_id=${apiKey}&count=10`)
       .then((res) => setImages([...images, ...res.data]));
   };
+
+  useEffect(() => {
+    fetchImages();
+  }, []);
 
   return (
     <div className="App">
@@ -64,10 +64,10 @@ function App() {
         <SimpleReactLightbox>
           <SRLWrapper>
             <WrapperImage>
-              {images.map((image) => (
+              {images.map((image, index) => (
                 <UnsplashImages
                   url={image.urls.small}
-                  key={image.id}
+                  key={index}
                   alt={image.alt_description}
                 />
               ))}
