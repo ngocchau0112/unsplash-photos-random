@@ -12,13 +12,17 @@ const H1 = styled.h1`
   font-style: italic;
   font-size: 80px;
   margin-bottom: 0.8em;
+
+  @media (max-width: 300px) {
+    font-size: 65px;
+  }
 `;
 
 const Heading = () => {
   return (
     <Header>
       <H1>
-        <a href="https://unsplash.com/" target="_blank">
+        <a href="https://unsplash.com/" target="_blank" rel="noreferrer">
           Unsplash
         </a>
       </H1>

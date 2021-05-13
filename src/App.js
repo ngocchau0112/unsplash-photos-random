@@ -25,6 +25,15 @@ const WrapperImage = styled.section`
   grid-gap: 0.5em;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-template-rows: masonry;
+
+  @media (max-width: 1024px) {
+    max-width: 60rem;
+  }
+
+  @media (max-width: 800px) {
+    max-width: 55rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
 `;
 
 function App() {

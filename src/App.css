@@ -21,3 +21,8 @@ a:hover {
   opacity: 80%;
   transition: ease-in-out;
 }
+
+.images {
+  display: block;
+  margin: 0 auto;
+}
